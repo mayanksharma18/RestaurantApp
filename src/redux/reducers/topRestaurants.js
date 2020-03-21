@@ -1,5 +1,4 @@
 import fetchRestaurantsData from "../../api/fetchListApiCall";
-import { datawithYearRankingSorted } from '../../utils/Restaurants'
 
 export const FETCH_TOP_RESTAURANTS_LIST = "FETCH_TOP_RESTAURANTS_LIST";
 export const FETCH_TOP_RESTAURANTS_LIST_SUCCESS =
@@ -29,7 +28,7 @@ export function fetchingListFail() {
 export function sortedRankingsWithYear(data) {
   return {
     type: UPDATED_TOP_RESTAURANTS_LIST_SORTED_BY_YEAR,
-    data : datawithYearRankingSorted(data)
+    data
   }
 }
 
@@ -68,8 +67,3 @@ export function fetchTopRestaurantsListThunk() {
       });
   };
 }
-
-// export default {
-//   RestaurantsList: fetchTopRestaurantsList,
-//   SortedData: sortedData
-// };

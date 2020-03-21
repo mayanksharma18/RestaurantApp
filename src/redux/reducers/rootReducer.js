@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux'
-import { fetchTopRestaurantsList, sortedData } from './topRestaurants';
-
+import { combineReducers } from 'redux';
+import {
+  fetchTopRestaurantsList as TopRestaurantsList,
+  sortedData as sortedDataWithYear
+} from './topRestaurants';
 
 const rootReducer = combineReducers({
-  fetchTopRestaurantsList,
-  sortedData
+  TopRestaurantsList,
+  sortedDataWithYear
 });
 
-export default rootReducer
+export default rootReducer;

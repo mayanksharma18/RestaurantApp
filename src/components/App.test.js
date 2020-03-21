@@ -7,7 +7,3 @@ describe('renders without crashing', () => {
       expect(shallow(<App />)).toMatchSnapshot();
     });
   });
-
-
-
-
