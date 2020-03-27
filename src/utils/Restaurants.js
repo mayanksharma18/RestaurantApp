@@ -22,6 +22,7 @@ export function getRankingYears (data) {
     return {sortedYears,hotelWithRankNan};
 }
 
+
 export function generateDataWithYearRankings (ranks,results,year) {
   const filteredResults=[];
   for(let i=0;i<ranks.length;i+=1) {
