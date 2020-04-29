@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchTopRestaurantsListThunk, sortedRankingsWithYear } from "../../redux/reducers/topRestaurants";
-import { datawithYearRankingSorted } from '../../utils/Restaurants';
+import { datawithYearRankingSorted, filterKeys } from '../../utils/Restaurants';
+// import SideNavBar from '../SideNavBar/SideNavBar'
+import Tile from "../Reusable/Tile";
 
 const mapStateToProps = state => {
    return {
@@ -20,6 +22,7 @@ const mapDispatchToProps = dispatch => ({
 
 class RestaurantsListContainer extends React.Component {
   
+  
   componentDidMount() {
     const { actions } = this.props;
     actions.fetchTopRestaurantsListThunk();
@@ -31,13 +34,20 @@ class RestaurantsListContainer extends React.Component {
 
   updateSortedData = () => {
     const { restaurantsData, actions } = this.props;
+     // eslint-disable-next-line no-console
+   console.log(filterKeys('Country',restaurantsData));
     const data = datawithYearRankingSorted(restaurantsData)
     if(restaurantsData.length > 0 ) return actions.sortedRankingsWithYear(data);
     return null;
   }
 
   render() {
-    return <p>HI</p>;
+    return (
+    // <>  
+    // <SideNavBar/>
+    <Tile/>
+    // </>
+    )
   }
 };
 

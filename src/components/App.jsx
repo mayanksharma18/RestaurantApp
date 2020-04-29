@@ -1,13 +1,15 @@
 import React from "react";
+import { BrowserRouter } from 'react-router-dom';
 import RestaurantsListContainer from "./RestaurantsList/RestaurantsListContainer";
 import styles from "./style.scss";
 
 const App = () => {
   return (
+    <BrowserRouter>
     <div className={styles.box}>
-      <h1>Hello</h1> 
       <RestaurantsListContainer />
     </div>
+    </BrowserRouter>
   );
 };
 
