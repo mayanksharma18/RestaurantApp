@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchTopRestaurantsListThunk, sortedRankingsWithYear } from "../../redux/reducers/topRestaurants";
 import { datawithYearRankingSorted, filterKeys } from '../../utils/Restaurants';
-// import SideNavBar from '../SideNavBar/SideNavBar'
-import Tile from "../Reusable/Tile";
+import RestaurantListByCountries from './RestaurantListByCountries/RestaurantListByCountries'
 
 const mapStateToProps = state => {
    return {
@@ -42,11 +41,9 @@ class RestaurantsListContainer extends React.Component {
   }
 
   render() {
+    const { restaurantsData } = this.props;
     return (
-    // <>  
-    // <SideNavBar/>
-    <Tile/>
-    // </>
+    <RestaurantListByCountries countries={filterKeys('Country',restaurantsData)}/>
     )
   }
 };

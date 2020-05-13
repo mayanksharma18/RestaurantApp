@@ -1,14 +1,16 @@
 import React from "react";
 import { BrowserRouter } from 'react-router-dom';
+import Header from './Header/Header'
+import SideNavBar from "./SideNavBar/SideNavBar";
 import RestaurantsListContainer from "./RestaurantsList/RestaurantsListContainer";
-import styles from "./style.scss";
+import "./style.scss";
 
 const App = () => {
   return (
     <BrowserRouter>
-    <div className={styles.box}>
-      <RestaurantsListContainer />
-    </div>
+    <Header />
+    <SideNavBar/>
+    <RestaurantsListContainer />
     </BrowserRouter>
   );
 };
